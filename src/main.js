@@ -5,7 +5,7 @@ import 'assets/css/index.styl'
 import router from './router'
 import VueI18n from 'vue-i18n'
 // import '@/utils/flexible'
-import '@/assets/font/iconfont.css'
+// import '@/assets/font/iconfont.css'
 // import Mint from 'mint-ui'
 // import 'mint-ui/lib/style.css'
 
