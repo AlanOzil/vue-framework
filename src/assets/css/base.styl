@@ -1,0 +1,152 @@
+body, html
+  line-height: 1
+  font-family: 'PingFang SC', 'Microsoft YaHei', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback'
+  user-select: none
+  -webkit-tap-highlight-color: transparent
+  // background: $color-background
+  // color: $color-text
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder
+  color: #fff
+input:-moz-placeholder, textarea:-moz-placeholder
+  color: #fff
+input::-moz-placeholder, textarea::-moz-placeholder
+  color: #fff
+input:-ms-input-placeholder, textarea:-ms-input-placeholder
+  color: #fff
+
+.clearfix
+  clear: both
+
+.el-icon-edit:hover {
+  color: rgb(3, 184, 250)
+}
+
+// .el-dialog__close {
+//   display: none
+// }
+
+.getMore
+  position: absolute
+  top: 7px
+  right: 10px
+  border: 1px solid #EEEEEE
+  round(3px)
+  font-size: 12px
+  color: #999999
+  width: 50px
+  height: 22px
+  line-height: 22px
+  text-align: center
+  cursor: pointer
+
+.module-head
+  width: 100%
+  font-size: 16px
+  color: #F43F2A
+  padding: 11px 0
+  text-indent: 15px
+  border-bottom: 1px solid #E4E7ED
+
+@-webkit-keyframes rotate{
+  0%{ -webkit-transform:rotate(0deg);}
+  100%{-webkit-transform:rotate(-360deg);}
+}
+@keyframes rotate{
+  0%{ transform:rotate(0deg);}
+  100%{transform:rotate(-360deg);}
+}
+@-webkit-keyframes zoom{
+  0%{ -webkit-transform:scale(0.9);}
+  70%{ -webkit-transform:scale(1);}
+  100%{-webkit-transform:scale(0.9);}
+}
+@keyframes zoom{
+  0%{ transform:scale(0.9);}
+  70%{ transform:scale(1);}
+  100%{transform:scale(0.9);}
+}
+@-webkit-keyframes opac{
+  0%{ opacity: 0.3;}
+  30%{ opacity: 0.5;}
+  50%{ opacity: 1;}
+  100%{ opacity: 0.3;}
+}
+@keyframes opac{
+  0%{ opacity: 0.3;}
+  30%{ opacity: 0.5;}
+  50%{ opacity: 1;}
+  100%{ opacity: 0.3;}
+}
+@-webkit-keyframes shake{
+  0%{ -webkit-transform: rotate(0deg);}
+  25%{ -webkit-transform: rotate(-5deg);}
+  50%{ -webkit-transform: rotate(0deg);}
+  75%{ -webkit-transform: rotate(5deg);}
+  100%{ -webkit-transform: rotate(0deg);}
+}
+@keyframes shake{
+  0%{ transform: rotate(0deg);}
+  25%{ transform: rotate(-5deg);}
+  50%{ transform: rotate(0deg);}
+  75%{ transform: rotate(5deg);}
+  100%{ transform: rotate(0deg);}
+}
+@-webkit-keyframes shadow{
+  from{ box-shadow: 1px 1px 20px 0px #fff}
+  to{ box-shadow: 2px 2px 10px 1px #9a9a9a}
+}
+@keyframes shadow{
+  from{ box-shadow: 1px 1px 20px 0px #fff}
+  to{ box-shadow: 2px 2px 10px 1px #9a9a9a}
+}
+
+.animate-shadow
+  -webkit-animation: shadow 3s 1 ease-out
+  animation: shadow 3s 1 ease-out
+  -webkit-animation-fill-mode:forwards
+  animation-fill-mode:forwards
+
+.animate-shake
+  -webkit-animation: shake 0.2s infinite linear
+  animation: shake 0.2s infinite linear
+
+.animate-opacity
+  -webkit-animation: opac 1.2s infinite linear
+  animation: opac 1.2s infinite linear
+
+.animate-opacity-delay1
+  -webkit-animation: opac 1.2s 0.3s infinite linear
+  animation: opac 1.2s 0.3s infinite linear
+
+.animate-opacity-delay2
+  -webkit-animation: opac 1.2s 0.6s infinite linear
+  animation: opac 1.2s 0.6s infinite linear
+
+.animate-opacity-delay3
+  -webkit-animation: opac 1.2s 0.9s infinite linear
+  animation: opac 1.2s 0.9s infinite linear
+
+.animate-zoom
+  -webkit-animation:zoom 1s infinite ease-out
+  animation:zoom 1s infinite  ease-out
+
+.animate-rotation
+  -webkit-animation:rotate 4s infinite linear
+  animation:rotate 4s infinite linear
+
+
+// textarea::-webkit-scrollbar,div::-webkit-scrollbar,body::-webkit-scrollbar,html::-webkit-scrollbar,iframe::-webkit-scrollbar {/*滚动条整体样式*/
+//     width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
+//     height: 4px;
+// }
+// div::-webkit-scrollbar-thumb,textarea::-webkit-scrollbar-thumb,body::-webkit-scrollbar-thumb,html::-webkit-scrollbar-thumb,iframe::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+//     border-radius: 5px;
+//     -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+//     background: rgba(0,0,0,0.2);
+// }
+// div::-webkit-scrollbar-track, textarea::-webkit-scrollbar-track,body::-webkit-scrollbar-track,html::-webkit-scrollbar-track,iframe::-webkit-scrollbar-track {/*滚动条里面轨道*/
+//     -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+//     border-radius: 0;
+//     background: rgba(0,0,0,0.1);
+// }
