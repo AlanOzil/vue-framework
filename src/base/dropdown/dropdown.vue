@@ -107,13 +107,15 @@ export default {
     },
     _initOptions() {
       Object.assign(this.options, this.data)
-      let selectedList = this.rntValue.key.split(' ')
-      this.options.map((el) => {
-        this.$set(el, 'check', false)
-        if (selectedList.indexOf(el.key) > -1) {
-          el.check = true
-        }
-      })
+      if (this.rntValue.key) {
+        let selectedList = this.rntValue.key.split(' ')
+        this.options.map((el) => {
+          this.$set(el, 'check', false)
+          if (selectedList.indexOf(el.key) > -1) {
+            el.check = true
+          }
+        })
+      }
     }
   }
 }
