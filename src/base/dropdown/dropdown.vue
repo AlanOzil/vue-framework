@@ -2,11 +2,11 @@
   <div class="my-dropdown">
     <!-- <div class="dp-trigger" @click="showDropdown" v-if="rntValue.key">{{rntValue.value}}</div>
     <div class="dp-trigger placeholder" @click="showDropdown" v-else>{{placeholder}}</div> -->
-    <slide-panel ref="slidePanel" v-if="show" :background="background">
+    <slide-panel ref="slidePanel" v-if="show" :background="background" @hide="hideDropdown">
       <template slot="header">
         <div class="slide-header">
           {{placeholder}}
-          <div class="close-icon"><span class="iconfont">&#xe60f;</span></div>
+          <div class="close-icon" @click="hideDropdown"><span class="iconfont">&#xe60f;</span></div>
         </div>
       </template>
       <template slot="main">
@@ -75,6 +75,7 @@ export default {
     hideDropdown() {
       this.show = false
       this.zIndex = -1
+      this.$emit('change', this.rntValue.value.trim(), this.multiple ? this.rntValue.key.split(' ') : this.rntValue.key)
     },
     select(el) {
       let tmp = []
@@ -83,6 +84,9 @@ export default {
         key: ''
       }
       this.options.map((e) => {
+        if (e.check === undefined) {
+          this.$set(e, 'check', false)
+        }
         if (e === el) {
           this.multiple ? el.check = !el.check : el.check = true
         } else if (!this.multiple) {
@@ -103,7 +107,6 @@ export default {
           this.hideDropdown()
         }, 200)
       }
-      this.$emit('change', this.rntValue.value.trim(), this.multiple ? this.rntValue.key.split(' ') : this.rntValue.key)
     },
     _initOptions() {
       Object.assign(this.options, this.data)
@@ -125,13 +128,6 @@ export default {
 // @import '~./font/iconfont.css'
 @import '~./mixin'
 .my-dropdown
-  .dp-trigger
-    font-size: 14px
-    height: 20px
-    line-height: 20px
-    &.placeholder
-      color: #666
-      font-size: 14px
   .slide-header
     padding-left: 20px
     position: relative

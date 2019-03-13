@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="home">
     <div class="lang" @click="showDropdown">{{dropdownValue}}</div>
-    <dropdown ref="dropdown" v-if="dropdownVisible" :data="lang" @change="dpChange"></dropdown>
+    <dropdown multiple ref="dropdown" v-if="dropdownVisible" :data="lang" @change="dpChange"></dropdown>
   </div>
 </template>
 
