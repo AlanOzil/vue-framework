@@ -67,7 +67,7 @@ export default {
       this.$nextTick(() => {
         this.$refs.slidePanel.showSlide()
         // 渲染选项
-        this.rntValue.key = key
+        this.rntValue.key = key || ''
         this._initOptions()
       })
     },

@@ -15,8 +15,8 @@ import {
 export default {
   data() {
     return {
-      dropdownValue: 'Chinese',
-      dropdownKey: 'ch',
+      dropdownValue: '请选择',
+      dropdownKey: null,
       dropdownVisible: false,
       lang: [{
         value: 'English',
