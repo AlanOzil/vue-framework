@@ -79,8 +79,8 @@ export default {
   },
   props: {
     total: {
-      type: Boolean,
-      default: true
+      type: Number,
+      default: 5
     },
     startText: {
       type: String,
@@ -100,7 +100,12 @@ export default {
     }
   },
   mounted() {
-    this.screenHeight = window.screen.height
+    this.screenHeight = document.documentElement.clientHeight
+    window.onresize = () => {
+      return (() => {
+        this.screenHeight = document.documentElement.clientHeight
+      })()
+    }
     this.date = new Date()
     this.startDate = this.date
     this.endDate = new Date(`${this.date.getFullYear()}/${this.date.getMonth() + 1}/${this.date.getDate() + 1}`)
@@ -202,7 +207,7 @@ export default {
       this._getHoliday()
     },
     _calc(y, m) {
-      let max = m + 5
+      let max = m + this.total
       let year = y
       let month = m
       for (let i = m; i < max; i++) {
@@ -342,7 +347,7 @@ export default {
     font-size:12px
     color:rgba(153,153,153,1)
 .cal-container
-  position: absolute
+  position: fixed
   top: 0
   z-index: -1
   width: 100%
