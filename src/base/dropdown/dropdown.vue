@@ -57,7 +57,6 @@ export default {
     SlidePanel
   },
   mounted() {
-    this.screenHeight = window.screen.height
     this.$nextTick(() => {
       this._initOptions()
     })
