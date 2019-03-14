@@ -44,7 +44,7 @@ export default {
     }
   },
   mounted() {
-    this.screenHeight = window.screen.height
+    this.screenHeight = document.documentElement.clientHeight
   },
   methods: {
     showSlide() {
