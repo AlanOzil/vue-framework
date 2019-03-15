@@ -82,7 +82,7 @@ export default {
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
 .slide-container
-  position: absolute
+  position: fixed
   top: 0
   z-index: -1
   width: 100%
