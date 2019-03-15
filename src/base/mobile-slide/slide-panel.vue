@@ -33,6 +33,10 @@ export default {
     background: {
       type: String,
       default: 'rgba(0,0,0,0.1)'
+    },
+    touchClose: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -53,9 +57,11 @@ export default {
       this._setHeight()
     },
     hideSlide() {
-      this.show = false
-      this.zIndex = -1
-      this.$emit('hide')
+      if (!this.touchClose) {
+        this.show = false
+        this.zIndex = -1
+        this.$emit('hide')
+      }
     },
     _setHeight() {
       this.$nextTick(() => {
