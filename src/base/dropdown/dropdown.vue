@@ -54,7 +54,7 @@ export default {
     },
     touchClose: {
       type: Boolean,
-      default: false
+      default: true
     }
   },
   components: {
