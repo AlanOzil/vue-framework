@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="home">
-    <slide-panel></slide-panel>
+    <slide-panel ref="slidePanel" :autoClose="false"></slide-panel>
   </div>
 </template>
 
@@ -9,6 +9,9 @@ import SlidePanel from 'base/mobile-slide/slide-panel'
 export default {
   components: {
     SlidePanel
+  },
+  mounted() {
+    this.$refs.slidePanel.showSlide()
   },
   methods: {}
 }
