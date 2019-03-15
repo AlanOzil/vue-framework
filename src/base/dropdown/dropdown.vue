@@ -2,7 +2,7 @@
   <div class="my-dropdown">
     <!-- <div class="dp-trigger" @click="showDropdown" v-if="rntValue.key">{{rntValue.value}}</div>
     <div class="dp-trigger placeholder" @click="showDropdown" v-else>{{placeholder}}</div> -->
-    <slide-panel ref="slidePanel" v-if="show" :background="background" @hide="hideDropdown">
+    <slide-panel ref="slidePanel" v-if="show" :background="background" :touchClose="touchClose" @hide="hideDropdown">
       <template slot="header">
         <div class="slide-header">
           {{placeholder}}
@@ -51,6 +51,10 @@ export default {
     data: {
       type: Array,
       default: () => []
+    },
+    touchClose: {
+      type: Boolean,
+      default: false
     }
   },
   components: {
