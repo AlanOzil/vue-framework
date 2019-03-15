@@ -34,9 +34,10 @@ export default {
       type: String,
       default: 'rgba(0,0,0,0.1)'
     },
-    touchClose: {
+    // 可否点击mask关闭
+    autoClose: {
       type: Boolean,
-      default: false
+      default: true
     }
   },
   computed: {
@@ -57,7 +58,7 @@ export default {
       this._setHeight()
     },
     hideSlide() {
-      if (!this.touchClose) {
+      if (this.autoClose) {
         this.show = false
         this.zIndex = -1
         this.$emit('hide')
