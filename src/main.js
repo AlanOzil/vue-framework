@@ -4,6 +4,8 @@ import App from './App.vue'
 import 'assets/css/index.styl'
 import router from './router'
 import VueI18n from 'vue-i18n'
+// import Scroll from 'Scroll'
+// import Scroll from 'better-scroll'
 // import '@/utils/flexible'
 // import '@/assets/font/iconfont.css'
 // import Mint from 'mint-ui'
@@ -11,6 +13,8 @@ import VueI18n from 'vue-i18n'
 
 // 通过插件的形式挂载
 Vue.use(VueI18n)
+// Vue.component('Scroll', Scroll)
+// Vue.use(Scroll)
 // Vue.use(Mint)
 
 const i18n = new VueI18n({

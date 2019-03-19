@@ -20,6 +20,9 @@ const createLintingRule = () => ({
 })
 
 module.exports = {
+  externals: {
+    'Scroll': 'BScroll'
+  },
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js'
