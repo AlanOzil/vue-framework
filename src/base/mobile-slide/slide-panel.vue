@@ -50,6 +50,9 @@ export default {
   },
   mounted() {
     this.screenHeight = document.documentElement.clientHeight
+    window.onresize = () => {
+      this.screenHeight = document.documentElement.clientHeight
+    }
   },
   methods: {
     showSlide() {
