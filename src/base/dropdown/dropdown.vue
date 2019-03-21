@@ -134,6 +134,7 @@ export default {
   .slide-header
     padding-left: 20px
     position: relative
+    font-size: 16px
     .close-icon
       position: absolute
       right: 20px
@@ -146,6 +147,7 @@ export default {
       flex(row, ceter, space-between)
       font-size: 12px
       .text
+        font-size: 16px
         height: 16px
         line-height: 16px
       .check
