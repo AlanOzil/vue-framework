@@ -2,11 +2,11 @@
   <div class="my-dropdown">
     <!-- <div class="dp-trigger" @click="showDropdown" v-if="rntValue.key">{{rntValue.value}}</div>
     <div class="dp-trigger placeholder" @click="showDropdown" v-else>{{placeholder}}</div> -->
-    <slide-panel ref="slidePanel" v-if="show" :background="background" :touchClose="touchClose" @hide="hideDropdown">
+    <slide-panel ref="slidePanel" v-if="isShow" :background="background" :touchClose="touchClose" @hide="hide">
       <template slot="header">
         <div class="slide-header">
           {{placeholder}}
-          <div class="close-icon" @click="hideDropdown"><span class="iconfont">&#xe60f;</span></div>
+          <div class="close-icon" @click="hide"><span class="iconfont">&#xe60f;</span></div>
         </div>
       </template>
       <template slot="main">
@@ -27,7 +27,7 @@ import './font/iconfont.css'
 export default {
   data() {
     return {
-      show: false,
+      isShow: false,
       options: [],
       rntValue: {
         value: '',
@@ -66,8 +66,11 @@ export default {
     })
   },
   methods: {
+    show(key) {
+      this.showDropdown(key)
+    },
     showDropdown(key) {
-      this.show = true
+      this.isShow = true
       this.$nextTick(() => {
         this.$refs.slidePanel.showSlide()
         // 渲染选项
@@ -75,8 +78,11 @@ export default {
         this._initOptions()
       })
     },
+    hide() {
+      this.hideDropdown()
+    },
     hideDropdown() {
-      this.show = false
+      this.isShow = false
       this.zIndex = -1
       this.$emit('change', this.rntValue.value.trim(), this.multiple ? this.rntValue.key.split(' ') : this.rntValue.key)
     },
@@ -107,7 +113,7 @@ export default {
       } else {
         this.rntValue = el
         setTimeout(() => {
-          this.hideDropdown()
+          this.hide()
         }, 200)
       }
     },
